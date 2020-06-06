@@ -4,6 +4,8 @@
     "source.fixAll.stylelint": true
   },
   "files.associations": {
+    ".huskyrc": "yaml",
+    ".lintstagedrc": "yaml",
     ".stylelintrc": "json"
   }
 }
