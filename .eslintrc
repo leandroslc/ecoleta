@@ -20,6 +20,9 @@
   },
 
   "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
     "react": {
       "version": "detect"
     }
@@ -38,5 +41,9 @@
   "plugins": [
     "@typescript-eslint",
     "prettier"
-  ]
+  ],
+
+  "rules": {
+    "import/extensions": "off"
+  }
 }
