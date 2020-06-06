@@ -7,11 +7,11 @@ Can't speak portuguese? Don't worry, read the [English version](docs/en/README.m
 </h1>
 
 <p align="center">
-  Uma API REST, aplicação web e <em>mobile</em> para facilitar o descarte correto de lixo reciclável.
+  Uma API REST, aplicação web e <em>mobile</em> para facilitar o descarte correto de lixo reciclável. 🌳
 </p>
 <p align="center">
   <em>
-    Construído durante a <u>Next Level Week #1</u> da <a href="https://rocketseat.com.br/">Rocketseat</a>.
+    Construído durante a <u>Next Level Week #1</u> da <a href="https://rocketseat.com.br/">Rocketseat</a>. 🚀
   </em>
 </p>
 

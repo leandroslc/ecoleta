@@ -5,11 +5,11 @@
 </h1>
 
 <p align="center">
-  A REST API, web and mobile application to assist the correct disposal of recyclable items.
+  A REST API, web and mobile application to assist the correct disposal of recyclable items. 🌳
 </p>
 <p align="center">
   <em>
-    Built during the <u>Next Level Week #1</u> by <a href="https://rocketseat.com.br/">Rocketseat</a>.
+    Built during the <u>Next Level Week #1</u> by <a href="https://rocketseat.com.br/">Rocketseat</a>. 🚀
   </em>
 </p>
 
