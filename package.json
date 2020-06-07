@@ -1,9 +1,15 @@
 {
   "name": "@ecoleta/workspace",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/typeorm/**",
+      "**/typeorm"
+    ]
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
