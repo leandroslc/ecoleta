@@ -32,12 +32,9 @@
   "types": "src/server.ts",
   "scripts": {
     "start": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules \"src/server.ts\"",
-    "migrate:new": "yarn run typeorm migration:create",
-    "migrate:new:dev": "yarn run migrate:new --connection development",
-    "migrate:gen": "yarn run typeorm migration:generate",
-    "migrate:gen:dev": "yarn run migrate:gen --connection development",
-    "migrate:run": "yarn run typeorm migration:run",
-    "migrate:run:dev": "yarn run migrate:run --connection development",
+    "migrate:new": "yarn run typeorm migration:create -c development",
+    "migrate:gen": "yarn run typeorm migration:generate -c development",
+    "migrate:run": "yarn run typeorm migration:run -c development",
     "test": "cross-env NODE_ENV=test jest",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js"
   },

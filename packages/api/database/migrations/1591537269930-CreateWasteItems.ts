@@ -11,7 +11,7 @@ export class CreateWasteItems1591537269930 implements MigrationInterface {
           name: 'id',
           type: 'integer',
           isPrimary: true,
-          isGenerated: true,
+          isGenerated: false,
         },
         {
           name: 'title',

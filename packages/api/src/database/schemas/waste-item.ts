@@ -8,7 +8,6 @@ export const WasteItemEntity = new EntitySchema<WasteItem>({
     id: {
       type: Number,
       primary: true,
-      generated: true,
     },
     title: {
       type: String,
