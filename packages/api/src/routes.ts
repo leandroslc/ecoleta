@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import { WasteItemsController } from './controllers';
 
 const routes = Router();
+const wasteItemsController = new WasteItemsController();
 
-routes.get('/hello', async (_request, response) => {
-  return response.send('Hello!');
-});
+routes.get('/items', wasteItemsController.index);
 
 export default routes;
