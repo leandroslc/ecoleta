@@ -2,28 +2,32 @@
 
 const path = require('path');
 
-const Schemas = `./src/database/schemas/*.ts`;
-const databasePath = (name) => `./database/${name}`;
-const migrations = (name) => path.join(databasePath(name), 'migrations');
-const databaseFile = (name) => path.join(databasePath(name), 'db.sqlite');
+const schemas = path.join('.', 'src', 'database', 'schemas', '*.ts');
+const databaseDir = path.join('.', 'database');
+const migrationsDir = path.join(databaseDir, 'migrations');
+const migrations = path.join(migrationsDir, '*.ts');
+const databaseFile = (name) => path.join(databaseDir, `db-${name}.sqlite`);
 
 module.exports = [
   {
     name: 'development',
     type: 'sqlite',
     database: databaseFile('dev'),
-    migrations: [`${migrations('dev')}/*.ts`],
-    entities: [Schemas],
+    migrations: [migrations],
+    entities: [schemas],
+    synchronize: false,
     cli: {
-      migrationsDir: migrations('dev'),
+      migrationsDir,
     },
   },
   {
     name: 'test',
     type: 'sqlite',
     database: databaseFile('test'),
-    entities: [Schemas],
+    migrations: [migrations],
+    entities: [schemas],
     dropSchema: true,
-    synchronize: true,
+    migrationsRun: true,
+    synchronize: false,
   },
 ];

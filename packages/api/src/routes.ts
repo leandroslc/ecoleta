@@ -1,11 +1,8 @@
 import { Router } from 'express';
-import { getRepository, CollectionPointEntity } from './database';
 
 const routes = Router();
 
-routes.get('/hello', (_request, response) => {
-  const pointRepository = getRepository(CollectionPointEntity);
-  pointRepository.find();
+routes.get('/hello', async (_request, response) => {
   return response.send('Hello!');
 });
 
