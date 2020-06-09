@@ -1,6 +1,5 @@
 "*.{js,ts,tsx}":
   - yarn run lint
-  - yarn run test
 
 "*.scss":
   - yarn run lint:css
