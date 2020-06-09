@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { getRepository, WasteItemEntity } from '../database';
+import { getRepository } from '../database';
+import { WasteItemEntity } from '../models';
 import constants from '../config/constants';
 import url from '../util/url';
 

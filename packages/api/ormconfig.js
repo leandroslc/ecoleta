@@ -2,7 +2,7 @@
 
 const path = require('path');
 
-const entities = path.join('.', 'src', 'database', 'entities', '*.ts');
+const models = path.join('.', 'src', 'models', '*.ts');
 const databaseDir = path.join('.', 'database');
 const migrationsDir = path.join(databaseDir, 'migrations');
 const migrations = path.join(migrationsDir, '*.ts');
@@ -14,7 +14,7 @@ module.exports = [
     type: 'sqlite',
     database: databaseFile('dev'),
     migrations: [migrations],
-    entities: [entities],
+    entities: [models],
     synchronize: false,
     cli: {
       migrationsDir,
@@ -25,7 +25,7 @@ module.exports = [
     type: 'sqlite',
     database: databaseFile('test'),
     migrations: [migrations],
-    entities: [entities],
+    entities: [models],
     dropSchema: true,
     migrationsRun: true,
     synchronize: false,

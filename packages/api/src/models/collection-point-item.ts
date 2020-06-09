@@ -1,6 +1,6 @@
 import { Entity, ManyToOne, PrimaryColumn } from 'typeorm';
 import { CollectionPointItem, CollectionPoint, WasteItem } from '@ecoleta/core';
-import { CollectionPointEntity, WasteItemEntity } from '..';
+import { CollectionPointEntity, WasteItemEntity } from '.';
 
 @Entity('collection-point-items')
 export class CollectionPointItemEntity implements CollectionPointItem {
