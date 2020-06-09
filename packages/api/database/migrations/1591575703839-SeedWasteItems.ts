@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-const Entity = 'WasteItem';
+const Entity = 'waste-items';
 
 export class SeedWasteItems1591575703839 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {

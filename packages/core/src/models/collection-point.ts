@@ -1,25 +1,11 @@
-export class CollectionPoint {
+export interface CollectionPoint {
   id: number;
-
   name?: string;
-
   image?: string;
-
-  imageUrl?: string;
-
   email?: string;
-
   whatsapp?: string;
-
   city?: string;
-
   state?: string;
-
-  latitude?: string;
-
+  latitude?: number;
   longitude?: number;
-
-  constructor() {
-    this.id = 0;
-  }
 }

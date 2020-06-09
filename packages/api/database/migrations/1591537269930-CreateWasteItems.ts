@@ -5,7 +5,7 @@ let table: Table;
 export class CreateWasteItems1591537269930 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     table = new Table({
-      name: 'WasteItems',
+      name: 'waste-items',
       columns: [
         {
           name: 'id',

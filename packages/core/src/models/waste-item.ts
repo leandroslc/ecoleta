@@ -1,11 +1,5 @@
-export class WasteItem {
+export interface WasteItem {
   id: number;
-
   title?: string;
-
   image?: string;
-
-  constructor() {
-    this.id = 0;
-  }
 }

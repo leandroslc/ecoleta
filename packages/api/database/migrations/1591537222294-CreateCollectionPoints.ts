@@ -5,7 +5,7 @@ let table: Table;
 export class CreateCollectionPoints1591537222294 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     table = new Table({
-      name: 'CollectionPoints',
+      name: 'collection-points',
       columns: [
         {
           name: 'id',
@@ -19,10 +19,6 @@ export class CreateCollectionPoints1591537222294 implements MigrationInterface {
         },
         {
           name: 'image',
-          type: 'varchar',
-        },
-        {
-          name: 'imageUrl',
           type: 'varchar',
         },
         {

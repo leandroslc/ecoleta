@@ -13,7 +13,7 @@ export class CreateCollectionPointItems1591541032159
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     table = new Table({
-      name: 'CollectionPointItems',
+      name: 'collection-point-items',
       columns: [
         {
           name: 'collectionPointId',
@@ -31,13 +31,13 @@ export class CreateCollectionPointItems1591541032159
     collectionPointForeignKey = new TableForeignKey({
       columnNames: ['collectionPointId'],
       referencedColumnNames: ['id'],
-      referencedTableName: 'CollectionPoints',
+      referencedTableName: 'collection-points',
     });
 
     wasteItemForeignKey = new TableForeignKey({
       columnNames: ['wasteItemId'],
       referencedColumnNames: ['id'],
-      referencedTableName: 'WasteItems',
+      referencedTableName: 'waste-items',
     });
 
     await queryRunner.createTable(table);
