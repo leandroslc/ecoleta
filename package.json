@@ -13,7 +13,8 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "lint:css": "stylelint \"**/*.scss\""
+    "lint:css": "stylelint \"**/*.scss\"",
+    "test": "lerna run test"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.0.2",
