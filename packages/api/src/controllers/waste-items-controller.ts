@@ -12,14 +12,14 @@ export class WasteItemsController {
     const items = await repositpry.find();
 
     const result = items.map((item) => {
-      return <WasteItemIndexResult>{
+      return new WasteItemIndexResult({
         ...item,
         imageUrl: url.resolve(
           request,
           constants.StaticItemsImagesPath,
           item.image,
         ),
-      };
+      });
     });
 
     return response.json(result);
