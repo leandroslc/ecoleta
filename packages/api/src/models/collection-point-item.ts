@@ -5,10 +5,10 @@ import { CollectionPointEntity, WasteItemEntity } from '.';
 @Entity('collection-point-items')
 export class CollectionPointItemEntity implements CollectionPointItem {
   @PrimaryColumn()
-  collectionPointId: number;
+  collectionPointId!: number;
 
   @PrimaryColumn()
-  wasteItemId: number;
+  wasteItemId!: number;
 
   @ManyToOne((_type) => CollectionPointEntity)
   collectionPoint?: CollectionPoint;
@@ -16,8 +16,7 @@ export class CollectionPointItemEntity implements CollectionPointItem {
   @ManyToOne((_type) => WasteItemEntity)
   wasteItem?: WasteItem;
 
-  constructor() {
-    this.collectionPointId = 0;
-    this.wasteItemId = 0;
+  constructor(pointItem?: CollectionPointItem) {
+    Object.assign(this, pointItem);
   }
 }

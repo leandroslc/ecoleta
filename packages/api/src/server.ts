@@ -1,7 +1,7 @@
 import app from './app';
 import constants from './config/constants';
-import { initializeDatabase } from './database';
+import { createConnection } from './database';
 
-initializeDatabase();
+createConnection();
 
 app.listen(constants.Port);

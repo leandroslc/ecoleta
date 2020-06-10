@@ -1,9 +1,24 @@
 import { Router } from 'express';
-import { WasteItemsController } from './controllers';
+import multer from 'multer';
+
+import multerConfig from './config/multer';
+import {
+  CollectionPointsController,
+  WasteItemsController,
+} from './controllers';
 
 const routes = Router();
+const upload = multer(multerConfig);
+
 const wasteItemsController = new WasteItemsController();
+const collectionPointsController = new CollectionPointsController();
 
 routes.get('/items', wasteItemsController.index);
+
+routes.post(
+  '/points',
+  upload.single('image'),
+  collectionPointsController.create,
+);
 
 export default routes;

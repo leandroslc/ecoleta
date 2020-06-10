@@ -1,11 +1,18 @@
 import request from 'supertest';
 import { expect } from 'chai';
-import initialize from './initialize';
+import { Connection } from 'typeorm';
+import { createConnection } from './test-utils';
 import app from '../../src/app';
 
 describe('/items', () => {
-  beforeAll(async () => {
-    await initialize();
+  let connection: Connection;
+
+  beforeEach(async () => {
+    connection = await createConnection();
+  });
+
+  afterEach(async () => {
+    await connection.close();
   });
 
   it('should return a collection of items', async () => {

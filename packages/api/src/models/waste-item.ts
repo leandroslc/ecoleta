@@ -4,15 +4,11 @@ import { WasteItem } from '@ecoleta/core';
 @Entity('waste-items')
 export class WasteItemEntity implements WasteItem {
   @PrimaryColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  title?: string;
+  title!: string;
 
   @Column()
-  image?: string;
-
-  constructor() {
-    this.id = 0;
-  }
+  image!: string;
 }

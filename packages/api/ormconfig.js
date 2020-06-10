@@ -26,8 +26,9 @@ module.exports = [
     database: databaseFile('test'),
     migrations: [migrations],
     entities: [models],
-    dropSchema: true,
+    dropSchema: false,
     migrationsRun: true,
     synchronize: false,
+    logging: false,
   },
 ];

@@ -4,33 +4,40 @@ import { CollectionPoint } from '@ecoleta/core';
 @Entity('collection-points')
 export class CollectionPointEntity implements CollectionPoint {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  name?: string;
+  name: string;
 
   @Column()
-  image?: string;
+  image: string;
 
   @Column()
-  email?: string;
+  email: string;
 
   @Column()
-  whatsapp?: string;
+  whatsapp: string;
 
   @Column()
-  city?: string;
+  city: string;
 
   @Column({ length: 2 })
-  state?: string;
+  state: string;
 
   @Column({ type: 'decimal' })
-  latitude?: number;
+  latitude: number;
 
   @Column({ type: 'decimal' })
-  longitude?: number;
+  longitude: number;
 
-  constructor() {
-    this.id = 0;
+  constructor(point?: Omit<CollectionPoint, 'id'>) {
+    this.name = point?.name || '';
+    this.image = point?.image || '';
+    this.email = point?.email || '';
+    this.whatsapp = point?.whatsapp || '';
+    this.city = point?.city || '';
+    this.state = point?.state || '';
+    this.latitude = point?.latitude || 0;
+    this.longitude = point?.longitude || 0;
   }
 }

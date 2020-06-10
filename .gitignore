@@ -1,4 +1,8 @@
 node_modules
 dist
+
 *.sqlite
 *.log
+
+packages/api/static
+!packages/api/static/items
