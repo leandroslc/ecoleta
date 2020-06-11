@@ -9,6 +9,27 @@ import stringUtil from '../util/string';
 import { CollectionPointEntity } from '../models';
 
 export class CollectionPointsController {
+  async index(request: Request, response: Response) {
+    const repository = getCustomRepository(CollectionPointRepository);
+
+    const command = {
+      city: request.query.city?.toString(),
+      state: request.query.state?.toString(),
+      items: request.query.items?.toString(),
+    };
+
+    const itemsId = stringUtil
+      .toArray(command.items)
+      .map((itemId) => Number(itemId));
+
+    const points = await repository.search({
+      ...command,
+      itemsId,
+    });
+
+    response.status(200).json(points);
+  }
+
   async show(request: Request, response: Response) {
     const repository = getCustomRepository(CollectionPointRepository);
 

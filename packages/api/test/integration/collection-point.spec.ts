@@ -13,7 +13,7 @@ import {
   CollectionPointItemEntity,
 } from '../../src/models';
 
-function getCreateCollectionPointCommand() {
+function getCreateCollectionPoint() {
   return {
     name: faker.company.companyName(),
     email: faker.internet.email(),
@@ -23,7 +23,11 @@ function getCreateCollectionPointCommand() {
     latitude: faker.random.number(),
     longitude: faker.random.number(),
     items: '1, 3,5',
-  } as CreateCollectionPointCommand;
+  };
+}
+
+function getCreateCollectionPointCommand() {
+  return getCreateCollectionPoint() as CreateCollectionPointCommand;
 }
 
 function getImageStream() {
@@ -79,10 +83,7 @@ describe('/points', () => {
       // Given
       const command = getCreateCollectionPointCommand();
       const img = getImageStream();
-
-      const point = connection.manager.create(CollectionPointEntity, {
-        ...command,
-      });
+      const point = connection.manager.create(CollectionPointEntity, command);
 
       await connection.manager.save(point);
 
@@ -101,10 +102,10 @@ describe('/points', () => {
   describe('show', () => {
     it('should return collection point with associated items', async () => {
       // Given
-      const command = getCreateCollectionPointCommand();
-      const point = connection.manager.create(CollectionPointEntity, {
-        ...command,
-      });
+      const point = connection.manager.create(
+        CollectionPointEntity,
+        getCreateCollectionPoint(),
+      );
 
       await connection.manager.save(point);
 
@@ -136,6 +137,39 @@ describe('/points', () => {
       // Then
       expect(response.status).to.be.equal(404);
       expect(response.body).to.have.property('message');
+    });
+  });
+
+  describe('index', () => {
+    it('should', async () => {
+      // Given
+      const points = connection.manager.create(CollectionPointEntity, [
+        getCreateCollectionPoint(),
+        getCreateCollectionPoint(),
+      ]);
+
+      await connection.manager.save(points);
+
+      await connection.manager.save([
+        new CollectionPointItemEntity({
+          collectionPointId: points[0].id,
+          wasteItemId: 1,
+        }),
+        new CollectionPointItemEntity({
+          collectionPointId: points[1].id,
+          wasteItemId: 2,
+        }),
+      ]);
+
+      // When
+      const response = await request(app)
+        .get('/points')
+        .query({ items: '2, 1' })
+        .send();
+
+      // Then
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.have.length(2);
     });
   });
 });

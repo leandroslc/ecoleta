@@ -2,6 +2,12 @@ import { EntityRepository, AbstractRepository } from 'typeorm';
 import { Optional } from '@ecoleta/core';
 import { CollectionPointEntity, CollectionPointItemEntity } from '../models';
 
+interface Search {
+  city?: string;
+  state?: string;
+  itemsId?: number[];
+}
+
 @EntityRepository(CollectionPointEntity)
 export class CollectionPointRepository extends AbstractRepository<
   CollectionPointEntity
@@ -44,5 +50,36 @@ export class CollectionPointRepository extends AbstractRepository<
       .getMany();
 
     return pointItems.map((pointItem) => pointItem.wasteItem);
+  }
+
+  async search({ city, state, itemsId }: Search) {
+    let query = this.manager
+      .createQueryBuilder(CollectionPointEntity, 'point')
+      .innerJoin(
+        CollectionPointItemEntity,
+        'pointItem',
+        'pointItem.collectionPointId = point.id',
+      )
+      .where('pointItem.wasteItemId in (:...itemsId)', { itemsId })
+      .orWhere('point.city = :city', { city })
+      .orWhere('point.state = :state', { state })
+      .select('point')
+      .distinct();
+
+    if (itemsId && itemsId.length > 0) {
+      query = query.where('pointItem.wasteItemId in (:...itemsId)', {
+        itemsId,
+      });
+    }
+
+    if (city) {
+      query = query.where('point.city = :city', { city });
+    }
+
+    if (state) {
+      query = query.where('point.state = :state', { state });
+    }
+
+    return query.getMany();
   }
 }
