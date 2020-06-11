@@ -11,10 +11,10 @@ export class CollectionPointItemEntity implements CollectionPointItem {
   wasteItemId!: number;
 
   @ManyToOne((_type) => CollectionPointEntity)
-  collectionPoint?: CollectionPoint;
+  collectionPoint!: CollectionPoint;
 
   @ManyToOne((_type) => WasteItemEntity)
-  wasteItem?: WasteItem;
+  wasteItem!: WasteItem;
 
   constructor(pointItem?: CollectionPointItem) {
     Object.assign(this, pointItem);

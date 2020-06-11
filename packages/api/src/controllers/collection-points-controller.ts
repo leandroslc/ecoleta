@@ -1,11 +1,32 @@
 import { Request, Response } from 'express';
-import { CreateCollectionPointCommand } from '@ecoleta/core';
+import {
+  CreateCollectionPointCommand,
+  CollectionPointShowResult,
+} from '@ecoleta/core';
 import { getCustomRepository } from '../database';
 import { CollectionPointRepository } from '../repositories';
 import stringUtil from '../util/string';
 import { CollectionPointEntity } from '../models';
 
 export class CollectionPointsController {
+  async show(request: Request, response: Response) {
+    const repository = getCustomRepository(CollectionPointRepository);
+
+    const { id } = request.params;
+
+    const point = await repository.findById(Number(id));
+
+    if (!point.hasValue) {
+      return response.status(404).json({ message: 'Point not found' });
+    }
+
+    const items = await repository.getItems(point.value);
+
+    return response
+      .status(200)
+      .json(new CollectionPointShowResult(point.value, items));
+  }
+
   async create(request: Request, response: Response) {
     const repository = getCustomRepository(CollectionPointRepository);
 

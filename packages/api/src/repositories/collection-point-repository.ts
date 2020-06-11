@@ -1,4 +1,5 @@
 import { EntityRepository, AbstractRepository } from 'typeorm';
+import { Optional } from '@ecoleta/core';
 import { CollectionPointEntity, CollectionPointItemEntity } from '../models';
 
 @EntityRepository(CollectionPointEntity)
@@ -27,5 +28,21 @@ export class CollectionPointRepository extends AbstractRepository<
       .getOne();
 
     return !!found;
+  }
+
+  async findById(id: number) {
+    const point = await this.manager.findOne(CollectionPointEntity, id);
+
+    return Optional(point);
+  }
+
+  async getItems(point: CollectionPointEntity) {
+    const pointItems = await this.manager
+      .createQueryBuilder(CollectionPointItemEntity, 'pointItem')
+      .where('pointItem.collectionPointId = :id', { id: point.id })
+      .innerJoinAndSelect('pointItem.wasteItem', 'wasteItem')
+      .getMany();
+
+    return pointItems.map((pointItem) => pointItem.wasteItem);
   }
 }

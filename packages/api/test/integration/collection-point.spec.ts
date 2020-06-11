@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import fs from 'fs';
 import path from 'path';
 import request from 'supertest';
 import faker from 'faker/locale/en';
 import { expect } from 'chai';
 import { Connection } from 'typeorm';
-import { CreateCollectionPointCommand } from '@ecoleta/core';
+import { CreateCollectionPointCommand, Dictionary } from '@ecoleta/core';
 import { createConnection } from './test-utils';
 import app from '../../src/app';
 
@@ -43,7 +41,7 @@ describe('/points', () => {
   });
 
   afterEach(async () => {
-    if (connection.isConnected) {
+    if (connection && connection.isConnected) {
       await connection.close();
     }
   });
@@ -57,7 +55,7 @@ describe('/points', () => {
       // When
       const response = await request(app)
         .post('/points')
-        .field(command as { [key: string]: any })
+        .field(command as Dictionary<CreateCollectionPointCommand>)
         .attach('image', img);
 
       // Then
@@ -91,11 +89,52 @@ describe('/points', () => {
       // When
       const response = await request(app)
         .post('/points')
-        .field(command as { [key: string]: any })
+        .field(command as Dictionary<CreateCollectionPointCommand>)
         .attach('image', img);
 
       // Then
       expect(response.status).to.be.equal(409);
+      expect(response.body).to.have.property('message');
+    });
+  });
+
+  describe('show', () => {
+    it('should return collection point with associated items', async () => {
+      // Given
+      const command = getCreateCollectionPointCommand();
+      const point = connection.manager.create(CollectionPointEntity, {
+        ...command,
+      });
+
+      await connection.manager.save(point);
+
+      await connection.manager.save([
+        new CollectionPointItemEntity({
+          collectionPointId: point.id,
+          wasteItemId: 1,
+        }),
+        new CollectionPointItemEntity({
+          collectionPointId: point.id,
+          wasteItemId: 2,
+        }),
+      ]);
+
+      // When
+      const response = await request(app).get(`/points/${point.id}`).send();
+
+      // Then
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.include(point);
+      expect(response.body.items).to.have.length(2);
+      expect(response.body.items[0]).to.have.property('title');
+    });
+
+    it('should return error if point not found', async () => {
+      // When
+      const response = await request(app).get(`/points/999`).send();
+
+      // Then
+      expect(response.status).to.be.equal(404);
       expect(response.body).to.have.property('message');
     });
   });

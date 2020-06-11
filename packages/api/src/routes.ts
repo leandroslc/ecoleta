@@ -15,6 +15,7 @@ const collectionPointsController = new CollectionPointsController();
 
 routes.get('/items', wasteItemsController.index);
 
+routes.get('/points/:id', collectionPointsController.show);
 routes.post(
   '/points',
   upload.single('image'),
