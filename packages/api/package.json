@@ -36,7 +36,7 @@
     "migrate:gen": "yarn run typeorm migration:generate -c development",
     "migrate:run": "yarn run typeorm migration:run -c development",
     "start": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules \"src/server.ts\"",
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest --coverage",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js"
   },
   "devDependencies": {

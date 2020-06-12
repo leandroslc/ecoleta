@@ -1,8 +1,6 @@
 node_modules
 dist
+coverage
 
 *.sqlite
 *.log
-
-packages/api/static
-!packages/api/static/items
