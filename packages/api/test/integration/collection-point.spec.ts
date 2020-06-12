@@ -126,6 +126,7 @@ describe('/points', () => {
       // Then
       expect(response.status).to.be.equal(200);
       expect(response.body).to.include(point);
+      expect(response.body.imageUrl).to.exist;
       expect(response.body.items).to.have.length(2);
       expect(response.body.items[0]).to.have.property('title');
     });
@@ -170,6 +171,7 @@ describe('/points', () => {
       // Then
       expect(response.status).to.be.equal(200);
       expect(response.body).to.have.length(2);
+      expect(response.body[0].imageUrl).to.exist;
     });
   });
 });

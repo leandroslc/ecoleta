@@ -23,7 +23,9 @@ export class CollectionPointShowResult implements CollectionPoint {
 
   items: WasteItemResult[];
 
-  constructor(point: CollectionPoint, items: WasteItem[]) {
+  imageUrl: string;
+
+  constructor(point: CollectionPoint, items: WasteItem[], imageUrl: string) {
     this.id = point.id;
     this.name = point.name;
     this.image = point.image;
@@ -33,6 +35,7 @@ export class CollectionPointShowResult implements CollectionPoint {
     this.state = point.state;
     this.latitude = point.latitude;
     this.longitude = point.longitude;
+    this.imageUrl = imageUrl;
     this.items = items.map((item) => <WasteItemResult>{ title: item.title });
   }
 }
