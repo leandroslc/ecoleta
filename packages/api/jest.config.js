@@ -9,4 +9,5 @@ module.exports = {
     '/test/',
     'ormconfig.js',
   ],
+  modulePathIgnorePatterns: ['<rootDir>/dist/'],
 };
