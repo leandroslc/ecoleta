@@ -1,4 +1,4 @@
-name: Continuous Integration Workflow
+name: Build
 
 on:
   push:
@@ -36,4 +36,4 @@ jobs:
     - name: Publish coverage
       uses: codecov/codecov-action@v1
         with:
-          file: ./packages/api/coverage/lcov.info
+          file: './packages/api/coverage/lcov.info'
