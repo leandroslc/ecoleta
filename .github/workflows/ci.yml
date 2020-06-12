@@ -35,5 +35,5 @@ jobs:
 
     - name: Publish coverage
       uses: codecov/codecov-action@v1
-        with:
-          file: './packages/api/coverage/lcov.info'
+      with:
+        file: ./packages/api/coverage/lcov.info
