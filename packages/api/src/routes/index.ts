@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { Router } from 'express';
 import items from './items';
 import points from './points';
