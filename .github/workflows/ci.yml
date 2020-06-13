@@ -24,8 +24,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Organize dependencies
-      run: yarn
-      run: yarn run bootstrap
+      run: |
+        yarn
+        yarn run bootstrap
 
     - name: Build
       run: yarn run build
