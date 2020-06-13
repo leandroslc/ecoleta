@@ -28,3 +28,23 @@
   </a>
   <img src="https://img.shields.io/badge/NLW-%231-32a867.svg" alt="NLW #1" />
 </div>
+
+## :book: Purpose
+Differently from the original project, this repository is a playground environment which includes improved resources and tools, like:
+
+- Package maintenance with [Lerna](https://lerna.js.org).
+- Dependency management with [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces).
+- Linters: [stylelint](https://stylelint.io), [eslint](https://eslint.org), [prettier](https://prettier.io), [lintstaged](https://github.com/okonet/lint-staged).
+- Git hooks with [husky](https://github.com/typicode/husky).
+- Database integration using [TypeORM](https://typeorm.io).
+- Tests using [Jest](https://jestjs.io), including [test coverage](https://codecov.io/gh/leandroslc/ecoleta).
+- Continuous Integration with [GitHub Actions](https://github.com/leandroslc/ecoleta/actions).
+
+## :rocket: Quick Start
+- Install [Node](https://nodejs.org) and [Yarn](https://classic.yarnpkg.com).
+- Run commands `yarn` and `yarn bootstrap` **from the repository root**.
+- Access one of the projects in `packages/{project}` and run the command `yarn start` to start the development environment.
+
+## :briefcase: Projects
+
+- [@ecoleta/api](/packages/api) | Backend.
