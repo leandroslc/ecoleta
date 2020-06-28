@@ -1,3 +1,4 @@
+
 <h1 align="center">
   <img src="../logo.svg" />
   <br>
@@ -30,7 +31,7 @@
 </div>
 
 ## :book: Purpose
-Differently from the original project, this repository is a playground environment which includes improved resources and tools, like:
+Differently from the original project (which is great for a week :smile:), this repository is a playground environment which includes improved resources and tools, like:
 
 - Package maintenance with [Lerna](https://lerna.js.org).
 - Dependency management with [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces).
@@ -42,9 +43,16 @@ Differently from the original project, this repository is a playground environme
 
 ## :rocket: Quick Start
 - Install [Node](https://nodejs.org) and [Yarn](https://classic.yarnpkg.com).
-- Run commands `yarn` and `yarn bootstrap` **from the repository root**.
-- Access one of the projects in `packages/{project}` and run the command `yarn start` to start the development environment.
+
+> At the root of the repository:
+- Run the commands `yarn` and `yarn bootstrap`.
+- Prepare the development database by running `yarn migrate`.
+- And run the command `yarn start:{project}` to start one of the aplications listed below.
 
 ## :briefcase: Projects
 
-- [@ecoleta/api](/packages/api) | Backend.
+Name                               | Description         |
+:--------------------------------- | :------------------ |
+&#9745; [api](/packages/api)       | API                 |
+&#9744; [web](/packages/web)       | Web application     |
+&#9744; [mobile](/packages/mobile) | Mobile application  |

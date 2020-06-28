@@ -32,7 +32,7 @@ Can't speak portuguese? Don't worry, read the [English version](docs/en/README.m
 </div>
 
 ## :book: Propósito
-Diferentemente do projeto original, este repositório é um ambiente de prática que inclui recursos aprimorados e ferramentas, como:
+Diferentemente do projeto original (que já é muito bom para um semana :smile:), este repositório é um ambiente de experimentação que inclui recursos aprimorados e ferramentas, como:
 
 - Manutenção de pacotes com [Lerna](https://lerna.js.org).
 - Gerenciamento de dependências com [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces).
@@ -44,9 +44,16 @@ Diferentemente do projeto original, este repositório é um ambiente de prática
 
 ## :rocket: Início Rápido
 - Instale o [Node](https://nodejs.org) e o [Yarn](https://classic.yarnpkg.com).
-- Execute os comandos `yarn` e `yarn bootstrap` **na raiz do repositório**.
-- Acesse um dos projetos em `packages/{projeto}` e execute o comando `yarn start` para iniciar o ambiente de desenvolvimento.
+
+> Na raiz do repositório:
+- Execute os comandos `yarn` e `yarn bootstrap`.
+- Prepare o banco de dados de desenvolvimento com o comando `yarn migrate`.
+- E execute o comando `yarn start:{projeto}` para iniciar uma das aplicações listadas abaixo.
 
 ## :briefcase: Projetos
 
-- [@ecoleta/api](/packages/api) | Backend.
+Nome                               | Descrição         |
+:--------------------------------- | :---------------- |
+&#9745; [api](/packages/api)       | API               |
+&#9744; [web](/packages/web)       | Aplicação Web     |
+&#9744; [mobile](/packages/mobile) | Aplicação Mobile  |
