@@ -1,4 +1,4 @@
-Can't speak portuguese? Don't worry, read the [English version](docs/en/README.md).
+Não sabe falar inglês? Leia a [versão em português](docs/pt-br/README.md).
 
 <h1 align="center">
   <img src="docs/logo.svg" />
@@ -7,11 +7,11 @@ Can't speak portuguese? Don't worry, read the [English version](docs/en/README.m
 </h1>
 
 <p align="center">
-  Uma API REST, aplicação web e <em>mobile</em> para facilitar o descarte correto de lixo reciclável. 🌳
+  A REST API, web and mobile application to assist the correct disposal of recyclable items. 🌳
 </p>
 <p align="center">
   <em>
-    Construído durante a <u>Next Level Week #1</u> da <a href="https://rocketseat.com.br/">Rocketseat</a>. 🚀
+    Built during the <u>Next Level Week #1</u> by <a href="https://rocketseat.com.br/">Rocketseat</a>. 🚀
   </em>
 </p>
 
@@ -31,29 +31,29 @@ Can't speak portuguese? Don't worry, read the [English version](docs/en/README.m
   <img src="https://img.shields.io/badge/NLW-%231-32a867.svg" alt="NLW #1" />
 </div>
 
-## :book: Propósito
-Diferentemente do projeto original (que já é muito bom para um semana :smile:), este repositório é um ambiente de experimentação que inclui recursos aprimorados e ferramentas, como:
+## :book: Purpose
+Differently from the original project (which is great for a week :smile:), this repository is a playground environment which includes improved resources and tools, like:
 
-- Manutenção de pacotes com [Lerna](https://lerna.js.org).
-- Gerenciamento de dependências com [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces).
-- _Linters_: [stylelint](https://stylelint.io), [eslint](https://eslint.org), [prettier](https://prettier.io), [lintstaged](https://github.com/okonet/lint-staged).
-- Git _hooks_ com [husky](https://github.com/typicode/husky).
-- Integração com banco de dados usando [TypeORM](https://typeorm.io).
-- Testes usando [Jest](https://jestjs.io), incluindo [cobertura de testes](https://codecov.io/gh/leandroslc/ecoleta).
-- Integração Contínua com [GitHub Actions](https://github.com/leandroslc/ecoleta/actions).
+- Package maintenance with [Lerna](https://lerna.js.org).
+- Dependency management with [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces).
+- Linters: [stylelint](https://stylelint.io), [eslint](https://eslint.org), [prettier](https://prettier.io), [lintstaged](https://github.com/okonet/lint-staged).
+- Git hooks with [husky](https://github.com/typicode/husky).
+- Database integration using [TypeORM](https://typeorm.io).
+- Tests using [Jest](https://jestjs.io), including [test coverage](https://codecov.io/gh/leandroslc/ecoleta).
+- Continuous Integration with [GitHub Actions](https://github.com/leandroslc/ecoleta/actions).
 
-## :rocket: Início Rápido
-- Instale o [Node](https://nodejs.org) e o [Yarn](https://classic.yarnpkg.com).
+## :rocket: Quick Start
+- Install [Node](https://nodejs.org) and [Yarn](https://classic.yarnpkg.com).
 
-> Na raiz do repositório:
-- Execute os comandos `yarn` e `yarn bootstrap`.
-- Prepare o banco de dados de desenvolvimento com o comando `yarn migrate`.
-- E execute o comando `yarn start:{projeto}` para iniciar uma das aplicações listadas abaixo.
+> At the root of the repository:
+- Run the commands `yarn` and `yarn bootstrap`.
+- Prepare the development database by running `yarn migrate`.
+- And run the command `yarn start:{project}` to start one of the aplications listed below.
 
-## :briefcase: Projetos
+## :briefcase: Projects
 
-Nome                               | Descrição         |
-:--------------------------------- | :---------------- |
-&#9745; [api](/packages/api)       | API               |
-&#9744; [web](/packages/web)       | Aplicação Web     |
-&#9744; [mobile](/packages/mobile) | Aplicação Mobile  |
+Name                               | Description         |
+:--------------------------------- | :------------------ |
+&#9745; [api](/packages/api)       | API                 |
+&#9744; [web](/packages/web)       | Web application     |
+&#9744; [mobile](/packages/mobile) | Mobile application  |
