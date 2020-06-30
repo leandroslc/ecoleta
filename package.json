@@ -17,6 +17,7 @@
     "lint:css": "stylelint \"**/*.scss\"",
     "migrate": "lerna run migrate:run --stream",
     "start:api": "lerna run start --scope @ecoleta/api --stream",
+    "start:web": "lerna run start --scope @ecoleta/web --stream",
     "test": "lerna run test"
   },
   "devDependencies": {
