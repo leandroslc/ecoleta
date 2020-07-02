@@ -27,7 +27,7 @@ export default (theme: ThemeConfig) => css`
   body {
     height: 100%;
     font-family: Roboto, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     color: ${theme.colors.text.body};
     background: ${theme.colors.bg.body};

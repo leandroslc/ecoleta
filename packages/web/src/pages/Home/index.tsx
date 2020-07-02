@@ -1,28 +1,35 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import { FiLogIn } from 'react-icons/fi';
-import { Header, Page, PageContent } from '../../components';
-import './styles.scss';
-import Background from './Background';
+import { Header, Layout, PageContent, Button, Image } from '../../components';
+import styles from './styles';
+import homeImg from '../../assets/home.svg';
 
-export const Home = () => {
+const Home = () => {
   return (
-    <Page>
+    <Layout>
       <Header />
 
       <PageContent>
-        <section>
-          <h1>Seu marketplace de coleta de resíduos.</h1>
-          <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
+        <div css={styles.container}>
+          <section css={styles.descriptionContainer}>
+            <h1 css={styles.title}>Seu marketplace de coleta de resíduos.</h1>
+            <p css={styles.subTitle}>
+              Ajudamos pessoas a encontrarem pontos de coleta de forma
+              eficiente.
+            </p>
 
-          <a href="/cadastro">
-            <FiLogIn />
-            <strong>Cadastre um ponto de coleta</strong>
-          </a>
-        </section>
-        <Background />
+            <Button component="a" href="/cadastro" icon={FiLogIn}>
+              Cadastre um ponto de coleta
+            </Button>
+          </section>
+          <aside css={styles.imageContainer}>
+            <Image src={homeImg} alt="Imagem de fundo da página inicial" />
+          </aside>
+        </div>
       </PageContent>
-    </Page>
+    </Layout>
   );
-}
+};
 
 export default Home;

@@ -9,6 +9,8 @@ export const header = css`
 export const brand = css`
   display: flex;
   align-items: center;
+  pointer-events: none;
+  user-select: none;
 `;
 
 export const brandTitle = css`
@@ -22,9 +24,14 @@ export const navigation = css`
   margin-left: auto;
 `;
 
+export const navigationItem = css`
+  margin-left: 20px;
+`;
+
 export default {
   header,
   brand,
   brandTitle,
   navigation,
+  navigationItem,
 };

@@ -6,4 +6,7 @@ const theme = {
 
 export type ThemeConfig = typeof theme;
 
+export * from './breakpoints';
+export * from './ThemeProvider';
+
 export default theme;
