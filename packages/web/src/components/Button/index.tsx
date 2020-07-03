@@ -1,16 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /** @jsx jsx */
-import { forwardRef, ComponentType } from 'react';
+import { forwardRef } from 'react';
 import { jsx } from 'theme-ui';
-import ButtonBase, { ButtonBaseProps } from '../ButtonBase';
+import ButtonBase from '../ButtonBase';
 import styles from './styles';
 
-interface InternalButtonProps {
-  icon?: ComponentType;
-}
-
-type ButtonProps = InternalButtonProps & ButtonBaseProps;
-
-export const Button = forwardRef<unknown, ButtonProps>((props, ref) => {
+export const Button = forwardRef<unknown, any>((props, ref) => {
   const { children, icon, ...otherProps } = props;
 
   let buttonIcon;
