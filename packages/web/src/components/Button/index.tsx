@@ -1,12 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /** @jsx jsx */
-import { forwardRef } from 'react';
 import { jsx } from 'theme-ui';
-import ButtonBase from './ButtonBase';
+import { IconType } from 'react-icons/lib';
+import ButtonBase, { ButtonBaseProps } from './ButtonBase';
 import * as styles from './styles';
+import { AnyComponentType } from '../../utils/types';
 
-export const Button = forwardRef<unknown, any>((props, ref) => {
-  const { children, icon, ...otherProps } = props;
+export type ButtonProps<T> = ButtonBaseProps<
+  T,
+  {
+    icon?: IconType;
+  }
+>;
+
+export const Button = <T extends AnyComponentType>(props: ButtonProps<T>) => {
+  const { as, children, icon, ...otherProps } = props;
 
   let buttonIcon;
 
@@ -21,11 +29,11 @@ export const Button = forwardRef<unknown, any>((props, ref) => {
   }
 
   return (
-    <ButtonBase ref={ref} css={styles.button} {...otherProps}>
+    <ButtonBase as={as} css={styles.button} {...otherProps}>
       {buttonIcon}
       <span css={styles.text}>{children}</span>
     </ButtonBase>
   );
-});
+};
 
 Button.displayName = 'Button';

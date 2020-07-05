@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { FiLogIn } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import { Header, Layout, PageContent, Button, Image } from '../../components';
-import styles from './styles';
+import * as styles from './styles';
 import homeImg from '../../assets/home.svg';
 
 const Home = () => {
   return (
     <Layout>
       <Header />
-
       <PageContent>
         <div css={styles.container}>
           <section css={styles.descriptionContainer}>
@@ -18,8 +18,7 @@ const Home = () => {
               Ajudamos pessoas a encontrarem pontos de coleta de forma
               eficiente.
             </p>
-
-            <Button component="a" href="/cadastro" icon={FiLogIn}>
+            <Button as={Link} to="/create-point" icon={FiLogIn}>
               Cadastre um ponto de coleta
             </Button>
           </section>

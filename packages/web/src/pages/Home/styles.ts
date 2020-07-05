@@ -40,11 +40,3 @@ export const subTitle = css`
   font-size: 24px;
   line-height: 38px;
 `;
-
-export default {
-  container,
-  descriptionContainer,
-  imageContainer,
-  title,
-  subTitle,
-};

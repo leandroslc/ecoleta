@@ -1,24 +1,34 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /** @jsx jsx */
-import { forwardRef } from 'react';
+import { PropsWithChildren } from 'react';
 import { jsx } from 'theme-ui';
+import { AnyComponentType, PropsWithAnyComponent } from '../../../utils/types';
 import * as styles from './styles';
 
-export const ButtonBase = forwardRef<unknown, any>((props, ref) => {
-  const { component = 'button', children, ...otherProps } = props;
+export type ButtonBaseProps<T, U = {}> = PropsWithAnyComponent<
+  T,
+  PropsWithChildren<U>
+>;
 
-  let Element = component;
+export const ButtonBase = <T extends AnyComponentType>(
+  props: ButtonBaseProps<T>,
+) => {
+  const { as, children, ...otherProps } = props;
 
-  if (component === 'button' && otherProps.href) {
+  let Element: any = as;
+
+  const anyOtherProps: any = otherProps;
+
+  if (as === 'button' && anyOtherProps.href) {
     Element = 'a';
   }
 
   return (
-    <Element ref={ref} css={styles.button} {...otherProps}>
+    <Element css={styles.button} {...otherProps}>
       {children}
     </Element>
   );
-});
+};
 
 ButtonBase.displayName = 'ButtonBase';
 
