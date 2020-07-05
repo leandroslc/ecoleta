@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { FC, ImgHTMLAttributes } from 'react';
-import styles from './styles';
+import * as styles from './styles';
 
 type ImageProps = ImgHTMLAttributes<unknown>;
 

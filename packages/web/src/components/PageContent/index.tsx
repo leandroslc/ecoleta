@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { FC, PropsWithChildren } from 'react';
 import { jsx } from 'theme-ui';
-import styles from './styles';
+import * as styles from './styles';
 
 type PageContentProps = PropsWithChildren<{
   type?: 'card';

@@ -27,11 +27,3 @@ export const navigation = css`
 export const navigationItem = css`
   margin-left: 20px;
 `;
-
-export default {
-  header,
-  brand,
-  brandTitle,
-  navigation,
-  navigationItem,
-};

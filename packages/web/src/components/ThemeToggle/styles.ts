@@ -15,8 +15,3 @@ export const themeToggleIcon = css`
   width: 20px;
   height: auto;
 `;
-
-export default {
-  themeToggle,
-  themeToggleIcon,
-};

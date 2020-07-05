@@ -2,7 +2,7 @@
 import { FC, MouseEvent } from 'react';
 import { jsx, useColorMode } from 'theme-ui';
 import modes from './modes';
-import styles from './styles';
+import * as styles from './styles';
 
 function getThemeMode(currentMode: string) {
   return modes[currentMode];

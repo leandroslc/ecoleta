@@ -6,7 +6,3 @@ export const button = css`
   background: none;
   border: 0;
 `;
-
-export default {
-  button,
-};

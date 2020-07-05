@@ -7,7 +7,3 @@ export const img = css`
   pointer-events: none;
   user-select: none;
 `;
-
-export default {
-  img,
-};

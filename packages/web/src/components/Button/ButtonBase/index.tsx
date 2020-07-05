@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { forwardRef } from 'react';
 import { jsx } from 'theme-ui';
-import styles from './styles';
+import * as styles from './styles';
 
 export const ButtonBase = forwardRef<unknown, any>((props, ref) => {
   const { component = 'button', children, ...otherProps } = props;

@@ -41,10 +41,3 @@ export const text = css`
   padding: ${buttonPadding} 0;
   text-align: center;
 `;
-
-export default {
-  button,
-  iconContainer,
-  icon,
-  text,
-};
