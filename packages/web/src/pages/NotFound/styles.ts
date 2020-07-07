@@ -13,8 +13,3 @@ export const title = css`
   margin-bottom: 12px;
   font-size: 26px;
 `;
-
-export default {
-  container,
-  title,
-};
