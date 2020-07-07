@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { IconType } from 'react-icons/lib';
@@ -6,15 +5,22 @@ import ButtonBase, { ButtonBaseProps } from './ButtonBase';
 import * as styles from './styles';
 import { AnyComponentType } from '../../utils/types';
 
-export type ButtonProps<T> = ButtonBaseProps<
+const paddings = {
+  big: 24,
+  medium: 16,
+};
+
+type ButtonProps<T extends AnyComponentType> = ButtonBaseProps<
   T,
   {
     icon?: IconType;
+    size?: keyof typeof paddings;
   }
 >;
 
 export const Button = <T extends AnyComponentType>(props: ButtonProps<T>) => {
-  const { as, children, icon, ...otherProps } = props;
+  const { as = 'button', children, icon, size = 'big', ...otherProps } = props;
+  const padding = paddings[size];
 
   let buttonIcon;
 
@@ -22,16 +28,18 @@ export const Button = <T extends AnyComponentType>(props: ButtonProps<T>) => {
     const Icon = icon;
 
     buttonIcon = (
-      <i css={styles.iconContainer} aria-hidden="true">
+      <i css={styles.iconContainer(padding)} aria-hidden="true">
         <Icon css={styles.icon} />
       </i>
     );
   }
 
+  const asComponent: any = as;
+
   return (
-    <ButtonBase as={as} css={styles.button} {...otherProps}>
+    <ButtonBase as={asComponent} css={styles.button} {...otherProps}>
       {buttonIcon}
-      <span css={styles.text}>{children}</span>
+      <span css={styles.text(padding)}>{children}</span>
     </ButtonBase>
   );
 };

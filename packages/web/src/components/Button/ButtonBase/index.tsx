@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /** @jsx jsx */
 import { PropsWithChildren } from 'react';
 import { jsx } from 'theme-ui';
 import { AnyComponentType, PropsWithAnyComponent } from '../../../utils/types';
 import * as styles from './styles';
 
-export type ButtonBaseProps<T, U = {}> = PropsWithAnyComponent<
-  T,
-  PropsWithChildren<U>
->;
+export type ButtonBaseProps<
+  T extends AnyComponentType,
+  U = {}
+> = PropsWithAnyComponent<T, PropsWithChildren<U>>;
 
 export const ButtonBase = <T extends AnyComponentType>(
   props: ButtonBaseProps<T>,
@@ -29,7 +28,5 @@ export const ButtonBase = <T extends AnyComponentType>(
     </Element>
   );
 };
-
-ButtonBase.displayName = 'ButtonBase';
 
 export default ButtonBase;

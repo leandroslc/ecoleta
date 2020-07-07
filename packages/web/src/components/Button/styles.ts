@@ -1,8 +1,6 @@
 import { css } from '@emotion/core';
 import { ThemeConfig } from '../../theme/index';
 
-const buttonPadding = '24px';
-
 export const button = (theme: ThemeConfig) => css`
   display: flex;
   align-items: center;
@@ -23,11 +21,11 @@ export const button = (theme: ThemeConfig) => css`
   }
 `;
 
-export const iconContainer = css`
+export const iconContainer = (padding: number) => css`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${buttonPadding} 32px;
+  padding: ${padding}px calc(${padding}px * 1.33);
   background-color: rgba(0, 0, 0, 0.08);
 `;
 
@@ -36,8 +34,8 @@ export const icon = css`
   height: 20px;
 `;
 
-export const text = css`
+export const text = (padding: number) => css`
   flex: 1;
-  padding: ${buttonPadding} 0;
+  padding: ${padding}px 0;
   text-align: center;
 `;

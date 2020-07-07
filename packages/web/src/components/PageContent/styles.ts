@@ -13,7 +13,7 @@ export const contentCard = (theme: ThemeConfig) => css`
   width: 100%;
   max-width: 730px;
   padding: 64px;
-  margin: 0 auto;
+  margin: 0 auto 48px auto;
   background-color: ${theme.colors.bg.contentCard};
   border-radius: 8px;
 `;

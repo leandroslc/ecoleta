@@ -1,8 +1,7 @@
 export type AnyComponentType =
   | keyof JSX.IntrinsicElements
   | React.ComponentType
-  | React.ElementType
-  | never;
+  | object;
 
 export type PropsWithAnyComponent<
   T,

@@ -17,7 +17,8 @@ export default (theme: ThemeConfig) => css`
 
   :focus {
     outline: none;
-    box-shadow: 0 0 3px 2px ${theme.colors.color.outline};
+    box-shadow: 0 0 3px 3px ${theme.colors.color.outline};
+    transition: box-shadow 0.2s;
   }
 
   html {
