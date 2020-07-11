@@ -1,9 +1,10 @@
 export class WasteItemIndexResult {
+  id: number;
   title: string;
-
   imageUrl: string;
 
-  constructor({ title, imageUrl }: WasteItemIndexResult) {
+  constructor({ id, title, imageUrl }: WasteItemIndexResult) {
+    this.id = id;
     this.title = title;
     this.imageUrl = imageUrl;
   }
