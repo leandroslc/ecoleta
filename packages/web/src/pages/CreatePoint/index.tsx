@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { useState, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { useState, FormEvent, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { FiArrowLeft, FiCheckCircle } from 'react-icons/fi';
 import { LatLngTuple } from 'leaflet';
 import {
   Button,
@@ -13,6 +13,7 @@ import {
   Layout,
   LinkButton,
   PageContent,
+  Success,
 } from '../../components';
 import api from '../../services/api';
 import AddressLocation from './AddressLocation';
@@ -35,6 +36,17 @@ const CreatePoint = () => {
   const [selectedState, setSelectedState] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [success, setSuccess] = useState(false);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (success) {
+      setTimeout(() => {
+        setSuccess(false);
+        history.push('/');
+      }, 2000);
+    }
+  }, [success, history]);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -66,6 +78,8 @@ const CreatePoint = () => {
     }
 
     await api.createPoint(formData);
+
+    setSuccess(true);
   }
 
   return (
@@ -118,6 +132,8 @@ const CreatePoint = () => {
           </div>
         </Form>
       </PageContent>
+
+      {success && <Success message="Cadastro cocluído!" icon={FiCheckCircle} />}
     </Layout>
   );
 };

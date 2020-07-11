@@ -11,6 +11,7 @@ const defaultTheme = {
     contentCard: '#fff',
     input: '#eeeef4',
     item: '#eeeef4',
+    success: 'rgba(0, 0, 0, 0.7)',
   },
   text: {
     body: '#6c6c80',
@@ -20,6 +21,7 @@ const defaultTheme = {
     link: '#1c6af1',
     input: '#6c6c80',
     inputPlaceholder: '#a0a0b2',
+    success: '#f5f5f5',
   },
   color: {
     outline: 'rgba(29, 155, 209, 0.7)',
@@ -41,6 +43,7 @@ const darkTheme: ColorSchema = {
     contentCard: '#5c5c61',
     input: '#454549',
     item: '#63637a',
+    success: 'rgba(0, 0, 0, 0.7)',
   },
   text: {
     body: '#f0f0f5',
@@ -50,6 +53,7 @@ const darkTheme: ColorSchema = {
     link: '#aac1ff',
     input: '#b6b6cc',
     inputPlaceholder: '#7e7e88',
+    success: '#f5f5f5',
   },
   color: {
     outline: 'rgba(44, 170, 224, 0.8)',
