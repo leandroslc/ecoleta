@@ -14,5 +14,10 @@
     "scss/at-rule-no-unknown": true
   },
 
-  "ignoreFiles": "**/node_modules/**"
+  "ignoreFiles": [
+    "**/node_modules/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/coverage/**"
+  ]
 }

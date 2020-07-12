@@ -17,7 +17,7 @@ if (env.isTesting()) {
   );
 }
 
-export default <Options>{
+export default {
   storage: multer.diskStorage({
     destination,
     filename(_request, file, callback) {
@@ -27,4 +27,4 @@ export default <Options>{
       callback(null, `${hash}${extension}`);
     },
   }),
-};
+} as Options;

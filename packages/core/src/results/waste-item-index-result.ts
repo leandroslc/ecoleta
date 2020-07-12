@@ -1,6 +1,8 @@
 export class WasteItemIndexResult {
   id: number;
+
   title: string;
+
   imageUrl: string;
 
   constructor({ id, title, imageUrl }: WasteItemIndexResult) {

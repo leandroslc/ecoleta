@@ -35,10 +35,10 @@ export class CollectionPointsController {
     });
 
     const results = points.map((point) => {
-      return <CollectionPointIndexResult>{
+      return {
         ...point,
         imageUrl: getImageUrl(request, point),
-      };
+      } as CollectionPointIndexResult;
     });
 
     return response.status(200).json(results);

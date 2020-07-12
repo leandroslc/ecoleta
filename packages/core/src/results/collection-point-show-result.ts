@@ -36,6 +36,8 @@ export class CollectionPointShowResult implements CollectionPoint {
     this.latitude = point.latitude;
     this.longitude = point.longitude;
     this.imageUrl = imageUrl;
-    this.items = items.map((item) => <WasteItemResult>{ title: item.title });
+    this.items = items.map((item) => {
+      return { title: item.title } as WasteItemResult;
+    });
   }
 }
