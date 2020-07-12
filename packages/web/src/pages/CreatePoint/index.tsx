@@ -7,6 +7,7 @@ import { LatLngTuple } from 'leaflet';
 import {
   Button,
   Dropzone,
+  ErrorSummary,
   FieldSet,
   Form,
   Header,
@@ -20,6 +21,7 @@ import AddressLocation from './AddressLocation';
 import AddressMap from './AddressMap';
 import Contact, { ContactData } from './Contact';
 import Items from './Items';
+import validate from './validation';
 import * as styles from './styles';
 
 const DefaultLatLng = [0.0, 0.0] as LatLngTuple;
@@ -37,6 +39,7 @@ const CreatePoint = () => {
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
   const history = useHistory();
 
   useEffect(() => {
@@ -48,6 +51,10 @@ const CreatePoint = () => {
     }
   }, [success, history]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [error]);
+
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
@@ -55,31 +62,42 @@ const CreatePoint = () => {
       name: contactData.name,
       email: contactData.email,
       whatsapp: contactData.whatsapp,
-      latitude: String(selectedMapPosition[0]),
-      longitude: String(selectedMapPosition[1]),
+      latitude: selectedMapPosition[0],
+      longitude: selectedMapPosition[1],
       state: selectedState,
       city: selectedCity,
-      items: selectedItems.join(','),
+      items: selectedItems,
       image: selectedImage,
     };
+
+    const [isValid, validationError] = await validate(data);
+
+    if (!isValid) {
+      setError(validationError);
+
+      return;
+    }
 
     const formData = new FormData();
     formData.append('name', data.name);
     formData.append('email', data.email);
     formData.append('whatsapp', data.whatsapp);
-    formData.append('latitude', data.latitude);
-    formData.append('longitude', data.longitude);
+    formData.append('latitude', String(data.latitude));
+    formData.append('longitude', String(data.longitude));
     formData.append('state', data.state);
     formData.append('city', data.city);
-    formData.append('items', data.items);
+    formData.append('items', data.items.join(','));
 
     if (data.image) {
       formData.append('image', data.image);
     }
 
-    await api.createPoint(formData);
-
-    setSuccess(true);
+    try {
+      await api.createPoint(formData);
+      setSuccess(true);
+    } catch {
+      setError('Houve um erro ao enviar os dados');
+    }
   }
 
   return (
@@ -92,6 +110,8 @@ const CreatePoint = () => {
 
       <PageContent type="card">
         <Form title="Cadastro do ponto de coleta" onSubmit={handleSubmit}>
+          <ErrorSummary message={error} />
+
           <Dropzone onFileUploaded={setSelectedImage} />
 
           <FieldSet legend="Dados">
