@@ -31,6 +31,12 @@ Não sabe falar inglês? Leia a [versão em português](docs/pt-br/README.md).
   <img src="https://img.shields.io/badge/NLW-%231-32a867.svg" alt="NLW #1" />
 </div>
 
+<br />
+
+<div align="center">
+  <img src="docs/homepage.png" />
+</div>
+
 ## :book: Purpose
 Differently from the original project (which is great for a week :smile:), this repository is a playground environment which includes improved resources and tools, like:
 
@@ -41,6 +47,14 @@ Differently from the original project (which is great for a week :smile:), this 
 - Database integration using [TypeORM](https://typeorm.io).
 - Tests using [Jest](https://jestjs.io), including [test coverage](https://codecov.io/gh/leandroslc/ecoleta).
 - Continuous Integration with [GitHub Actions](https://github.com/leandroslc/ecoleta/actions).
+- React components styling with [emotion](https://emotion.sh/) and theming with [theme-ui](https://theme-ui.com/).
+
+## :sparkles: Additional features
+- `(api)` Environment agnostic URLs for uploaded images.
+- `(web)` Dark/Light themes and components.
+- `(web)` Not found (404) page.
+- `(web)` Success message.
+- `(web)` Client side form validation.
 
 ## :rocket: Quick Start
 - Install [Node](https://nodejs.org) and [Yarn](https://classic.yarnpkg.com).
@@ -55,5 +69,5 @@ Differently from the original project (which is great for a week :smile:), this 
 Name                               | Description         |
 :--------------------------------- | :------------------ |
 &#9745; [api](/packages/api)       | API                 |
-&#9744; [web](/packages/web)       | Web application     |
+&#9745; [web](/packages/web)       | Web application     |
 &#9744; [mobile](/packages/mobile) | Mobile application  |

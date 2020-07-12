@@ -30,6 +30,12 @@
   <img src="https://img.shields.io/badge/NLW-%231-32a867.svg" alt="NLW #1" />
 </div>
 
+<br />
+
+<div align="center">
+  <img src="../homepage.png" />
+</div>
+
 ## :book: Propósito
 Diferentemente do projeto original (que já é muito bom para um semana :smile:), este repositório é um ambiente de experimentação que inclui recursos aprimorados e ferramentas, como:
 
@@ -40,6 +46,14 @@ Diferentemente do projeto original (que já é muito bom para um semana :smile:)
 - Integração com banco de dados usando [TypeORM](https://typeorm.io).
 - Testes usando [Jest](https://jestjs.io), incluindo [cobertura de testes](https://codecov.io/gh/leandroslc/ecoleta).
 - Integração Contínua com [GitHub Actions](https://github.com/leandroslc/ecoleta/actions).
+- Estilização de componentes React usando [emotion](https://emotion.sh/) e temas usando [theme-ui](https://theme-ui.com/).
+
+## :sparkles: Recursos adicionais
+- `(api)` URLs indenpendentes de ambiente para as imagens enviadas.
+- `(web)` Temas Escuro/Claro e components.
+- `(web)` Página para rota não encontrada (404).
+- `(web)` Mensagem de sucesso.
+- `(web)` Validação de formulário (client side).
 
 ## :rocket: Início Rápido
 - Instale o [Node](https://nodejs.org) e o [Yarn](https://classic.yarnpkg.com).
@@ -54,5 +68,5 @@ Diferentemente do projeto original (que já é muito bom para um semana :smile:)
 Nome                               | Descrição         |
 :--------------------------------- | :---------------- |
 &#9745; [api](/packages/api)       | API               |
-&#9744; [web](/packages/web)       | Aplicação Web     |
+&#9745; [web](/packages/web)       | Aplicação Web     |
 &#9744; [mobile](/packages/mobile) | Aplicação Mobile  |
