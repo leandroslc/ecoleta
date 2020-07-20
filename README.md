@@ -55,6 +55,8 @@ Differently from the original project (which is great for a week :smile:), this 
 - `(web)` Not found (404) page.
 - `(web)` Success message.
 - `(web)` Client side form validation.
+- `(mobile)` Dropdowns to select states and cities.
+- `(mobile)` Automatically detects the local IP address for development.
 
 ## :rocket: Quick Start
 - Install [Node](https://nodejs.org) and [Yarn](https://classic.yarnpkg.com).
@@ -70,4 +72,4 @@ Name                               | Description         |
 :--------------------------------- | :------------------ |
 &#9745; [api](/packages/api)       | API                 |
 &#9745; [web](/packages/web)       | Web application     |
-&#9744; [mobile](/packages/mobile) | Mobile application  |
+&#9745; [mobile](/packages/mobile) | Mobile application  |

@@ -54,6 +54,8 @@ Diferentemente do projeto original (que já é muito bom para um semana :smile:)
 - `(web)` Página para rota não encontrada (404).
 - `(web)` Mensagem de sucesso.
 - `(web)` Validação de formulário (client side).
+- `(mobile)` Dropdowns para selecionar estados and cidades.
+- `(mobile)` Automaticamente detecta o endereço de IP local para desenvolvimento.
 
 ## :rocket: Início Rápido
 - Instale o [Node](https://nodejs.org) e o [Yarn](https://classic.yarnpkg.com).
@@ -69,4 +71,4 @@ Nome                               | Descrição         |
 :--------------------------------- | :---------------- |
 &#9745; [api](/packages/api)       | API               |
 &#9745; [web](/packages/web)       | Aplicação Web     |
-&#9744; [mobile](/packages/mobile) | Aplicação Mobile  |
+&#9745; [mobile](/packages/mobile) | Aplicação Mobile  |
