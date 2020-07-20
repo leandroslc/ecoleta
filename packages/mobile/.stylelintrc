@@ -1,0 +1,9 @@
+{
+  "extends": "../../.stylelintrc",
+  "rules": {
+    "font-family-no-missing-generic-family-keyword": null,
+    "property-no-unknown": null,
+    "selector-type-case": null,
+    "value-keyword-case": null
+  }
+}

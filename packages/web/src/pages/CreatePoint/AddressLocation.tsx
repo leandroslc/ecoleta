@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
+import { array } from '@ecoleta/core';
 import { Field, FieldGroup } from '../../components';
 import ibge from '../../services/ibge';
-import array from '../../utils/array';
 
 interface AddressProps {
   selectedState: string;

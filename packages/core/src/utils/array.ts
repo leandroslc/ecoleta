@@ -10,7 +10,7 @@ function ascendingSort<T>(a: T, b: T) {
   return 0;
 }
 
-export default {
+export const array = {
   sort: <T extends number | string>(values: T[]) => {
     return values.sort((a, b) => ascendingSort<T>(a, b));
   },
