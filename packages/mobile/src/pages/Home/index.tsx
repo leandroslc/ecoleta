@@ -4,7 +4,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Select, { PickerStyle } from 'react-native-picker-select';
-import { array } from '@ecoleta/core';
+import { utils } from '@ecoleta/core';
 import styles from './styles';
 import ibge from '../../services/ibge';
 
@@ -35,7 +35,7 @@ const Home = () => {
 
       const names = response.data.map((state) => state.sigla);
 
-      setStates(array.sort(names));
+      setStates(utils.array.sort(names));
     });
   }, []);
 
