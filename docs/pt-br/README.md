@@ -67,8 +67,8 @@ Diferentemente do projeto original (que já é muito bom para um semana :smile:)
 
 ## :briefcase: Projetos
 
-Nome                               | Descrição         |
-:--------------------------------- | :---------------- |
-&#9745; [api](/packages/api)       | API               |
-&#9745; [web](/packages/web)       | Aplicação Web     |
-&#9745; [mobile](/packages/mobile) | Aplicação Mobile  |
+Nome                               | Descrição         | Dependência
+:--------------------------------- | :---------------- | :-----------
+&#9745; [api](/packages/api)       | API               | --
+&#9745; [web](/packages/web)       | Aplicação Web     | `api`
+&#9745; [mobile](/packages/mobile) | Aplicação Mobile  | `api`

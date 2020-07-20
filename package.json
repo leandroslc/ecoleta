@@ -16,8 +16,9 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "lint:css": "stylelint \"**/*.{scss,css,ts,tsx,js}\"",
     "migrate": "lerna run migrate:run --stream",
-    "start:api": "lerna run start --scope @ecoleta/api --stream",
-    "start:web": "lerna run start --scope @ecoleta/web --stream",
+    "start:api": "cd packages/api && yarn run start",
+    "start:mobile": "cd packages/mobile && yarn run start",
+    "start:web": "cd packages/web && yarn run start",
     "test": "lerna run test"
   },
   "devDependencies": {

@@ -68,8 +68,8 @@ Differently from the original project (which is great for a week :smile:), this 
 
 ## :briefcase: Projects
 
-Name                               | Description         |
-:--------------------------------- | :------------------ |
-&#9745; [api](/packages/api)       | API                 |
-&#9745; [web](/packages/web)       | Web application     |
-&#9745; [mobile](/packages/mobile) | Mobile application  |
+Name                               | Description         | Dependency
+:--------------------------------- | :------------------ | :----------
+&#9745; [api](/packages/api)       | API                 | --
+&#9745; [web](/packages/web)       | Web application     | `api`
+&#9745; [mobile](/packages/mobile) | Mobile application  | `api`
