@@ -13,4 +13,4 @@ export * from './results/collection-point-index-result';
 export * from './types/dictionary';
 export * from './types/optional';
 
-export * as utils from './utils';
+export * from './utils';

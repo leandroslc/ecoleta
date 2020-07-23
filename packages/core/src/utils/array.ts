@@ -8,9 +8,9 @@ function ascendingSort<T>(a: T, b: T) {
   }
 
   return 0;
-};
+}
 
-export const array = {
+export default {
   sort: <T extends number | string>(values: T[]) => {
     return values.sort((a, b) => ascendingSort<T>(a, b));
   },
